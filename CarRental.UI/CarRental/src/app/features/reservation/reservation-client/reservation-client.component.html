@@ -1,0 +1,54 @@
+<div class="container">
+  <h1 class="mt-1">My Reservations</h1>
+
+  <div class="container">
+    <div *ngIf="reservations$ | async as reservations">
+      <div class="table-responsive">
+        <table class="table table-bordered" style="background-color: #324b4b">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Car Model</th>
+              <th>Date Reservation</th>
+              <th>PickUp Date</th>
+              <th>Return Date</th>
+              <th>PickUp Location</th>
+              <th>Return Location</th>
+              <th>Details</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reservation of reservations">
+              <td>{{ reservation.id }}</td>
+              <td>{{ reservation.selectedCarModel }}</td>
+              <td>{{ reservation.dateReservation }}</td>
+              <td>{{ reservation.pickUpDate }}</td>
+              <td>{{ reservation.returnDate }}</td>
+              <td>{{ reservation.pickUpLocationName }}</td>
+              <td>{{ reservation.returnLocationName }}</td>
+              <td>{{ reservation.details.substring(0, 20) }}</td>
+              <td class="btns">
+                <a
+                  class="btn btn-outline-success"
+                  [routerLink]="['/reservation', reservation.id]"
+                  >View</a
+                >
+                <button
+                  type="button"
+                  class="btn btn-outline-danger ms-3"
+                  (click)="onDelete(reservation.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="(reservations$ | async)?.length === 0">
+    <p>No reservations found</p>
+  </div>
+</div>

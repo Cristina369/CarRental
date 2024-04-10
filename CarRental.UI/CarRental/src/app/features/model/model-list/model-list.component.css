@@ -1,0 +1,20 @@
+.container {
+  padding: 30px 0px;
+}
+
+.table tbody {
+  background-color: white;
+}
+
+.table th {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 16px;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

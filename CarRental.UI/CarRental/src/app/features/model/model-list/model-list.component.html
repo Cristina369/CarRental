@@ -1,0 +1,51 @@
+<div class="container">
+  <h1 class="mt-3">Models List</h1>
+
+  <div class="d-flex justify-content-end mt-3">
+    <a [routerLink]="['/admin/models/add']" class="btn btn-outline-dark"
+      >Add Model</a
+    >
+  </div>
+
+  <div class="container">
+    <ng-container *ngIf="models$ | async as models">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Make Name</th>
+              <th>Model Name</th>
+              <th>Description</th>
+              <th>No. Cars</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let model of models">
+              <td>{{ model.id }}</td>
+              <td>{{ model.makeName }}</td>
+              <td>{{ model.name }}</td>
+              <td>{{ model.description }}</td>
+              <td>{{ model.carCount }}</td>
+              <td class="btns">
+                <a
+                  class="btn btn-outline-success"
+                  [routerLink]="['/admin/models', model.id]"
+                  >Edit</a
+                >
+                <button
+                  type="button"
+                  class="btn btn-outline-danger ms-3"
+                  (click)="onDelete(model.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+  </div>
+</div>

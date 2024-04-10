@@ -1,0 +1,114 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="search-container">
+    <div class="date">
+      <div>
+        <!-- <label class="form-label">PickUp Date</label> -->
+        <input
+          type="date"
+          class="form-control"
+          id="pickupDate"
+          name="pickupDate"
+          [(ngModel)]="model.pickupDate"
+          (ngModelChange)="parseDatePickUp($event)"
+          placeholder="PickUp Date"
+        />
+      </div>
+
+      <div>
+        <!-- <label class="form-label">Return Date</label> -->
+        <input
+          type="date"
+          class="form-control"
+          id="returnDate"
+          name="returnDate"
+          [(ngModel)]="model.returnDate"
+          (ngModelChange)="parseDateReturn($event)"
+          placeholder="Return Date"
+        />
+      </div>
+    </div>
+
+    <div class="search-container">
+      <div class="date">
+        <!-- <label for="pickupTicker" class="form-label mt-3">PickUp Location</label> -->
+        <input
+          type="text"
+          class="form-control"
+          id="pickupTicker"
+          name="pickupTicker"
+          [(ngModel)]="pickupSelectedValue"
+          (ngModelChange)="onPickupModelChange($event)"
+          (blur)="loseFocus()"
+          placeholder="PickUp Location"
+          autocomplete="off"
+        />
+
+        <ng-container *ngIf="pickupSearchResults | async as pickupResults">
+          <div
+            class="search-results"
+            *ngIf="pickupResults.length > 0; else pickUpNoResults"
+          >
+            <div
+              *ngFor="let r of pickupResults; let i = index"
+              (click)="pickupClicked(r)"
+            >
+              <div class="row">
+                <div class="results col-10">{{ r.city }}</div>
+              </div>
+            </div>
+          </div>
+          <ng-template #pickUpNoResults>
+            <div
+              class="no-results invisible"
+              *ngIf="!pickupResults?.length || pickupSelectedValue"
+            >
+              No results found
+            </div>
+          </ng-template>
+        </ng-container>
+
+        <!-- <label for="returnTicker" class="form-label mt-3">Return Location</label> -->
+        <input
+          type="text"
+          class="form-control"
+          id="returnTicker"
+          name="returnTicker"
+          [(ngModel)]="returnSelectedValue"
+          (ngModelChange)="onReturnModelChange($event)"
+          (blur)="loseFocus()"
+          placeholder="Return Location"
+          autocomplete="off"
+        />
+
+        <ng-container *ngIf="returnSearchResults | async as returnResults">
+          <div
+            class="search-results-second"
+            *ngIf="returnResults.length > 0; else returnNoResults"
+          >
+            <div
+              *ngFor="let r of returnResults; let i = index"
+              (click)="returnClicked(r)"
+            >
+              <div class="row">
+                <div class="col-10">{{ r.city }}</div>
+              </div>
+            </div>
+          </div>
+          <ng-template #returnNoResults>
+            <div
+              class="no-results invisible"
+              *ngIf="!returnResults?.length || returnSelectedValue"
+            >
+              No results found
+            </div>
+          </ng-template>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="w-100">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+    <!-- <div *ngIf="searchResultsSubscribedArray.length === 0">No results found.</div> -->
+  </div>
+</form>

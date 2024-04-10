@@ -1,0 +1,161 @@
+.footer {
+  background-color: #324b4b;
+}
+
+.div-footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: start;
+  gap: 1vw;
+}
+
+/* Footer divs titles */
+.footer-heading {
+  color: white;
+  font-size: 23px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.div-about ul li {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Footer divs titles icons */
+.footer-heading .icon {
+  color: #b7ecec;
+  font-size: 20px;
+  margin-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #b7ecec;
+  border-radius: 70%;
+}
+
+/* About div */
+.list-info li a i {
+  font-size: larger;
+}
+
+.list-info li a span {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* About submit btn */
+.form-group {
+  width: 85%;
+}
+
+.form-control {
+  border-radius: 5px 0 0 5px;
+  border: 3px solid #b7ecec;
+}
+
+.btn-primary.submit {
+  width: 30%;
+  border-radius: 0 5px 5px 0;
+  background-color: #b7ecec;
+  border-color: #b7ecec;
+}
+
+.form-control::placeholder {
+  color: white;
+}
+
+/* news div */
+.heading {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.news div img {
+  height: 8vh;
+  width: 8vw;
+  border-radius: 10px;
+}
+
+.meta a {
+  color: #888;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* Information div */
+ul.list li a {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.div-information {
+  margin-right: 3vw;
+  margin-left: 1vw;
+}
+
+/* Insta div */
+.image-grid {
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+}
+
+.image-container {
+  height: 8vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  display: block;
+  margin: auto;
+  height: 100%;
+}
+
+.image-container img:hover {
+  transform: translateY(-5px);
+}
+
+/* Rights div */
+.line {
+  border-top: 1px solid #dee2e6;
+}
+
+@media only screen and (max-width: 990px) and (min-width: 768px) {
+  .div-information {
+    display: none;
+  }
+
+  .image-grid {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 300px) {
+  .div-footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .div-information {
+    display: none;
+  }
+
+  .news div img {
+    width: auto;
+    height: 15vh;
+  }
+
+  .image-container {
+    height: 13vw;
+  }
+}

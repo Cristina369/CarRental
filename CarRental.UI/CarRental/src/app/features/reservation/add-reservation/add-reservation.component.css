@@ -1,0 +1,141 @@
+.add-reservation-container {
+  width: 100%;
+}
+
+.container-title h1 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #324b4b;
+  margin-bottom: 30px;
+}
+
+.claims {
+  padding: 10px 20px;
+  background-color: #e9ffef;
+  border: 1px solid #22923c;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.claims i {
+  font-size: 30px;
+}
+
+.claims h1 {
+  font-size: 23px;
+  font-weight: 400;
+  color: #324b4b;
+  margin-bottom: 5px;
+}
+
+.claims p {
+  font-size: 20px;
+  font-weight: 300;
+  color: black;
+}
+
+.title-secondary {
+  padding: 20px 30px;
+}
+
+.title-secondary h1 {
+  font-size: 23px;
+  font-weight: 400;
+  color: #324b4b;
+  margin-bottom: 0px;
+}
+
+.title-secondary h2 {
+  font-size: 23px;
+  font-weight: 400;
+  color: #324b4b;
+}
+
+.box-cancellation {
+  padding: 5px 15px;
+  background-color: transparent;
+  border: 1px solid #324b4b;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 20px;
+}
+
+.box-cancellation i {
+  font-size: 27px;
+}
+
+.box-cancellation h1 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #324b4b;
+  margin-bottom: 2px;
+}
+
+.box-cancellation p {
+  font-size: 15px;
+  font-weight: 300;
+  color: black;
+}
+
+.insurance-details {
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.insurance-details a {
+  text-decoration: none;
+}
+
+.faq {
+  padding: 50px 0px;
+}
+
+.faq h2 {
+  text-align: center;
+  color: #324b4b;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #324b4b !important;
+  color: white;
+}
+
+.final-note {
+  background-color: #fef3ec;
+  border: 1px solid #fbc69f;
+  padding: 4px 10px;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+.final-note h1 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.final-note h1 span {
+  font-weight: 500;
+}
+
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  margin: 0px !important;
+}
+
+.accordion-item .accordion-header .accordion-button {
+  border-top-left-radius: var(--bs-accordion-inner-border-radius);
+  border-top-right-radius: var(--bs-accordion-inner-border-radius);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

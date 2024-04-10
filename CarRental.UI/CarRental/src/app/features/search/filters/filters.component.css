@@ -1,0 +1,121 @@
+.filters-container {
+  width: 100%;
+  padding: 5% 10% 0% 5%;
+  border: 1px solid #324b4b;
+  border-radius: 10px;
+}
+
+.title {
+  gap: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 100%;
+  text-align: end;
+  color: #324b4b;
+  font-size: 17px;
+}
+
+.line {
+  border-top: 1px solid #dee2e6;
+}
+
+.filters-container > div {
+  margin-bottom: 20px;
+}
+
+.filters-container .filter-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 4px;
+}
+
+.filters-container label {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(50, 75, 75, 0.8);
+}
+
+.filters-container h1 {
+  color: #324b4b;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+/* priceRanges */
+.filters-container h5 {
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filters-container input {
+  color: #324b4b;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(50, 75, 75, 0.5);
+  border-radius: 20px;
+  background-color: white;
+}
+
+input[type="checkbox"]:checked::before {
+  background-color: #324b4b;
+}
+
+input[type="checkbox"]::after {
+  content: "\2713";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: white;
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked::after {
+  visibility: visible;
+}
+
+.bi-chevron-down::before {
+  content: "\f282";
+  font-size: 16px;
+  color: rgb(50, 75, 75, 0.6);
+  margin-left: 7px;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 300px) {
+  .filters-container {
+    width: 100%;
+    padding: 5% 11% 5% 10%;
+  }
+}

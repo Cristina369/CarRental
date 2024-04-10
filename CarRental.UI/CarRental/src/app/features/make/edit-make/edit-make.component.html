@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="mt-3">Edit Make</h1>
+
+  <ng-container *ngIf="make; else notFound">
+    <form #form="ngForm">
+      <div class="mt-2">
+        <div class="mt-3">
+          <label class="form-label" for="categoryId">Category Id</label>
+          <input
+            type="text"
+            disabled
+            id="categoryId"
+            class="form-control"
+            name="categoryId"
+            value="{{ make.id }}"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label class="form-label" for="categoryName">Category Name</label>
+          <input
+            type="text"
+            id="categoryName"
+            class="form-control"
+            name="categoryName"
+            [(ngModel)]="make.name"
+          />
+        </div>
+
+        <div class="mt-3 d-flex">
+          <button type="submit" class="btn btn-primary">Save</button>
+
+          <button
+            type="button"
+            class="btn btn-danger ms-3"
+            (click)="onDelete()"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-template #notFound>
+    <div class="alert alert-warning" role="alert">Category not found!</div>
+  </ng-template>
+</div>

@@ -1,0 +1,88 @@
+<div class="filters-container">
+  <div class="title mb-0">
+    <h1>Filters</h1>
+    <div>
+      <button class="btn" (click)="applyFilter()">Apply Filters</button>
+
+      <!-- <button class="btn" (click)="resetFilters()">Reset Filters</button> -->
+    </div>
+  </div>
+  <hr class="line" />
+
+  <div class="priceRanges">
+    <h5 for="priceRange">
+      Price per day
+      <i
+        class="bi bi-chevron-down"
+        (click)="priceListVisible = !priceListVisible"
+      ></i>
+    </h5>
+    <div *ngIf="priceListVisible">
+      <div class="filter-list" *ngFor="let price of priceModels">
+        <input type="checkbox" [id]="price.label" [(ngModel)]="price.checked" />
+        <label [for]="price.label">{{ price.label }}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="carModels">
+    <h5 for="priceRange">
+      Car Models<i
+        class="bi bi-chevron-down"
+        (click)="carModelsListVisible = !carModelsListVisible"
+      ></i>
+    </h5>
+    <div *ngIf="carModelsListVisible">
+      <div class="filter-list" *ngFor="let model of carModels">
+        <input
+          type="checkbox"
+          [id]="model"
+          [name]="model"
+          [(ngModel)]="modelSelections[model]"
+        />
+        <label [for]="model">{{ model }}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="carMakes">
+    <h5 for="priceRange">
+      Car Makes<i
+        class="bi bi-chevron-down"
+        (click)="carMakesListVisible = !carMakesListVisible"
+      ></i>
+    </h5>
+    <div *ngIf="carMakesListVisible">
+      <div class="filter-list" *ngFor="let make of carMakes">
+        <input
+          type="checkbox"
+          [id]="make"
+          [name]="make"
+          [(ngModel)]="makeSelections[make]"
+          *ngIf="priceListVisible"
+        />
+        <label [for]="make">{{ make }}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="carTypes">
+    <h5 for="carTypes">
+      Car Types<i
+        class="bi bi-chevron-down"
+        (click)="carTypesListVisible = !carTypesListVisible"
+      ></i>
+    </h5>
+    <div *ngIf="carTypesListVisible">
+      <div class="filter-list" *ngFor="let type of carTypes">
+        <input
+          type="checkbox"
+          [id]="type"
+          [name]="type"
+          [(ngModel)]="typeSelections[type]"
+        />
+        <label [for]="type">{{ type }}</label>
+      </div>
+    </div>
+  </div>
+</div>

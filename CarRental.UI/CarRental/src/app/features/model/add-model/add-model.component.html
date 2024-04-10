@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="mt-3">Add Model</h1>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+    <div class="mt-2">
+      <div class="mt-3">
+        <label class="form-label">Model Name</label>
+        <input
+          type="text"
+          id="categoryName"
+          class="form-control"
+          name="categoryName"
+          [(ngModel)]="model.name"
+        />
+      </div>
+
+      <div class="mt-3">
+        <label class="form-label">Model Description</label>
+        <input
+          type="text"
+          id="categoryUrlHandle"
+          class="form-control"
+          name="categoryUrlHandle"
+          [(ngModel)]="model.description"
+        />
+      </div>
+
+      <div class="mt-3">
+        <label for="makes" class="form-label">Makes</label>
+        <ng-container *ngIf="makes$ | async as makes">
+          <select
+            class="form-control"
+            [(ngModel)]="model.selectedMake"
+            name="selectedMake"
+            id="selectedMake"
+          >
+            <option *ngFor="let make of makes" [value]="make.id">
+              {{ make.name }}
+            </option>
+          </select>
+        </ng-container>
+      </div>
+
+      <div class="mt-3">
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

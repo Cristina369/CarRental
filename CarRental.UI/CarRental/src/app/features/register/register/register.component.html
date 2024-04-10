@@ -1,0 +1,90 @@
+<div class="register container">
+  <div class="div-register">
+    <div class="row mx-auto">
+      <form class="col" #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <h1 class="text-light fw-medium text-center">Welcome To CarRental</h1>
+        <p class="text-light text-center">
+          Enter the fileds below to get registered
+        </p>
+        <div class="content d-flex flex-column">
+          <div class="mt-3">
+            <!-- <label for="firstName" class="form-label">First Name</label> -->
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="First Name"
+              [(ngModel)]="model.firstName"
+            />
+          </div>
+
+          <div class="mt-3">
+            <!-- <label for="lastName" class="form-label">Last Name</label> -->
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              name="lastName"
+              placeholder="Last Name"
+              [(ngModel)]="model.lastName"
+            />
+          </div>
+
+          <div class="mt-3">
+            <!-- <label for="phoneNumber" class="form-label">Phone Number</label> -->
+            <input
+              type="text"
+              class="form-control"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="Phone Number"
+              [(ngModel)]="model.phoneNumber"
+            />
+          </div>
+
+          <div class="mt-3">
+            <!-- <label for="email" class="form-label">Email</label> -->
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email"
+              [(ngModel)]="model.email"
+            />
+          </div>
+
+          <div class="mt-3">
+            <!-- <label for="password" class="form-label">Password</label> -->
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Password"
+              [(ngModel)]="model.password"
+            />
+          </div>
+          <a href="#" class="link mt-5">Already have an account? Log In</a>
+        </div>
+
+        <div class="action mt-3 text-center">
+          <button type="submit" class="btn">Register</button>
+        </div>
+      </form>
+
+      <div class="background-info col"></div>
+
+      <div class="div-info col order-first">
+        <div>
+          <h1 class="fw-medium">Start Your Journey With Us</h1>
+          <p class="text-black fw-lighter">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
+            facilis repudiandae, delectus molestias iusto perspiciatis
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

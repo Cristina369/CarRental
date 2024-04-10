@@ -1,0 +1,143 @@
+<div class="our-vehicles">
+  <section class="first-section">
+    <div class="imagef">
+      <img
+        src="https://cdn.pixabay.com/photo/2016/03/29/08/01/oldtimer-1287726_1280.jpg"
+      />
+    </div>
+    <div class="text">
+      <div>
+        <h3>make a powerful choice</h3>
+        <h2>The next chapter of</h2>
+        <h1>Vintage Cars</h1>
+        <p class="first">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis aut
+          nihil quam vel? Magni sit blanditiis aut consequatur recusandae, minus
+          dolorem illum quam perferendis commodi. Esse dolorem laboriosam
+          voluptas quaerat.
+        </p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis aut
+          nihil quam vel? Magni sit blanditiis aut consequatur recusandae, minus
+          dolorem illum quam perferendis commodi. Esse dolorem laboriosam
+          voluptas quaerat. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Possimus sequi dolorum natus assumenda quas excepturi, ea
+          aliquid provident eligendi, temporibus aut facere corrupti praesentium
+          repellendus. Reprehenderit aut repellat eveniet eligendi.
+        </p>
+      </div>
+    </div>
+    <div class="image">
+      <img
+        src="https://cdn.pixabay.com/photo/2016/03/29/08/01/oldtimer-1287726_1280.jpg"
+      />
+      <h2>Build your own adventure</h2>
+    </div>
+  </section>
+
+  <section class="car-carousel">
+    <div class="">
+      <h2>Simple Cars</h2>
+      <div class="div-texts">
+        <h1>The best choice</h1>
+        <h2>For the road ahead</h2>
+      </div>
+      <div id="simpleCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="let car of simpleCars; let i = index"
+            [class.active]="i === 0"
+          >
+            <div class="image-car">
+              <img [src]="car.image" class="d-block" [alt]="'Car ' + (i + 1)" />
+            </div>
+            <div class="carousel-caption-details">
+              <h5>{{ car.name }}</h5>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#simpleCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#simpleCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="vehicle-details">
+    <div>
+      <h1>Make your story a strong one</h1>
+    </div>
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni eveniet
+        mollitia nesciunt provident dignissimos voluptatum minima ullam eaque
+        voluptatem dolor quidem, saepe unde magnam et ad, fugit qui nobis
+        incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
+        quibusdam iste. Distinctio assumenda explicabo quasi a et repudiandae
+        ducimus labore totam.
+      </p>
+    </div>
+  </section>
+
+  <section class="car-carousel">
+    <div class="luxury">
+      <h2>Luxury Cars</h2>
+      <div class="div-texts">
+        <h1>The luxury line</h1>
+        <h2>For memories and not only</h2>
+      </div>
+      <div id="simpleCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="let car of luxuryCars; let i = index"
+            [class.active]="i === 0"
+          >
+            <div class="image-car">
+              <img [src]="car.image" class="d-block" [alt]="'Car ' + (i + 1)" />
+            </div>
+            <div class="carousel-caption-details">
+              <h5>{{ car.name }}</h5>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#simpleCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#simpleCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="space"></div>
+</div>

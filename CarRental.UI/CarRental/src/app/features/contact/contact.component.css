@@ -1,0 +1,257 @@
+/* title */
+.line {
+  margin-top: 40px;
+  border-top: 1px solid #324b4b;
+}
+
+.second-line {
+  margin-bottom: 15px;
+  border-top: 1px solid #324b4b;
+}
+
+.title {
+  background-color: white;
+  padding: 2% 2% 5% 10%;
+  text-align: start;
+}
+
+.title h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.title h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.title p,
+.title h1,
+.title h2 {
+  color: #324b4b;
+  width: 60%;
+}
+
+.title p:last-child {
+  width: 30%;
+}
+
+/* contact div */
+.contact {
+  background-color: white;
+  padding: 2% 5%;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background-color: white;
+}
+
+.contact-info {
+  position: absolute;
+  width: 30%;
+  top: 23vw;
+  right: 35vw;
+  padding: 6vw 5vw;
+  border-radius: 50%;
+  background-color: #324b4b;
+  z-index: 96;
+}
+
+.info-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-box h1 {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.info-box p {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* form contact */
+.contact-form {
+  padding: 55px 39px;
+  width: 35%;
+  margin-right: 7%;
+  background-color: white;
+  border: 1px solid rgba(50, 75, 75, 0.4);
+  z-index: 97;
+}
+
+.form-group {
+  padding: 5px 0px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  padding: 2px 3px;
+  color: rgba(50, 75, 75, 0.7);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.name {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name div {
+  width: 49%;
+}
+
+.contact-form h2 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #324b4b;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-form button {
+  color: white;
+  font-size: 15px;
+  background-color: #324b4b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
+}
+
+/* div image .contact */
+.contact-image {
+  opacity: 1;
+  width: 38vw;
+  height: 38vw;
+  border-radius: 50%;
+  position: absolute;
+  left: 3vw;
+  top: 27vw;
+  background-color: rgba(50, 75, 75, 0.7);
+  border: 1px solid rgba(50, 75, 75, 0.3);
+  z-index: 90;
+}
+
+/* div map */
+.map-address {
+  width: 100%;
+  background-color: white;
+  padding: 20px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-address iframe {
+  border-radius: 30px;
+  z-index: 99;
+}
+
+@media only screen and (max-width: 1270px) and (min-width: 990px) {
+  .contact-info {
+    width: 30%;
+    top: 30vw;
+    right: 35vw;
+    padding: 4vw 4vw;
+  }
+
+  .info-box h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .info-box p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .contact-image {
+    width: 38vw;
+    height: 38vw;
+    left: 6vw;
+    top: 45vw;
+  }
+}
+
+@media only screen and (max-width: 990px) and (min-width: 300px) {
+  .title p {
+    width: 85%;
+  }
+
+  .title p:last-child {
+    width: 85%;
+  }
+
+  .info-box h1 {
+    font-size: 20px;
+  }
+
+  .info-box p {
+    font-size: 14px;
+  }
+
+  .contact-image {
+    visibility: hidden;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-info {
+    position: static;
+    width: 90%;
+    padding: 30px;
+    border-radius: 0px;
+  }
+
+  .contact-form {
+    padding: 25px 19px;
+    width: 90%;
+    margin-right: 0%;
+    margin: 0%;
+    background-color: white;
+    border: 1px solid rgba(50, 75, 75, 0.4);
+  }
+
+  .map-address {
+    padding: 0%;
+  }
+
+  .map-address iframe {
+    border-radius: 0%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1266px) and (min-width: 990px) {
+}

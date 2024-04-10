@@ -1,0 +1,150 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-login {
+  width: 80%;
+  border-radius: 40px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+
+.div-login > div {
+  background-color: #324b4b;
+  border-radius: 40px;
+  padding: 2vw;
+}
+
+form {
+  width: 50vw;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form h1 {
+  font-size: 27px;
+  font-weight: 500;
+}
+
+form .content {
+  width: 90%;
+  text-align: center;
+}
+
+form .form-control {
+  padding: 13px;
+}
+
+form .form-control input {
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 30px;
+}
+
+.form-control:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+form a.link {
+  text-decoration: none;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+form .action {
+  width: 100%;
+}
+
+form .action button {
+  width: 85%;
+  align-self: center;
+  background: #b7ecec;
+  font-size: 21px;
+  font-weight: 500;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+form .action button:hover {
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
+}
+
+.background-info {
+  position: absolute;
+  left: 40px;
+  width: 50%;
+  height: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2020/03/24/11/53/mercury-4963831_1280.png");
+  background-repeat: no-repeat;
+  background-size: auto 27vw;
+  background-position: left top;
+}
+
+.div-info {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 40px;
+  background: linear-gradient(
+    335deg,
+    rgba(255, 255, 255, 0.45) 33%,
+    transparent 67%
+  );
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.div-info div h1 {
+  font-size: 25px;
+  font-weight: 400;
+  color: black;
+  padding-bottom: 10px;
+}
+
+.div-info p {
+  color: #324b4b;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 990px) and (min-width: 768px) {
+  .div-login {
+    width: 95%;
+  }
+
+  .background-info {
+    top: 180px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 300px) {
+  .div-info {
+    display: none;
+  }
+
+  .background-info {
+    display: none;
+  }
+
+  .div-login {
+    width: 95%;
+  }
+}

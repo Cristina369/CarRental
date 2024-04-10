@@ -1,0 +1,148 @@
+<div class="reservation-component">
+  <div class="progress" style="height: 1px">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      [style.width.%]="currentStep * 50"
+      [attr.aria-valuenow]="currentStep * 50"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    ></div>
+  </div>
+
+  <div class="main-container">
+    <div class="reservation">
+      <div class="reservation-process">
+        <!-- <div
+          class="car-data col-md-4"
+          (click)="currentStep = 1"
+          style="cursor: pointer"
+        >
+          <div class="car-data-title">
+            <h5>Car Data</h5>
+            <i class="bi bi-person-circle fs-1"></i>
+          </div>
+        </div> -->
+        <div class="car-data" (click)="currentStep = 1" style="cursor: pointer">
+          <div class="car-data-title">
+            <h5>Reservation Data</h5>
+            <i class="bi bi-calendar2-check"></i>
+          </div>
+        </div>
+        <div class="car-data" (click)="currentStep = 2" style="cursor: pointer">
+          <div class="car-data-title">
+            <h5>Payment Data</h5>
+            <i class="bi bi-cash-stack"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner-container">
+        <div class="car-data-list">
+          <div class="search-data" *ngIf="searchRequest">
+            <h1>Pick-up and drop-off</h1>
+            <div class="car-info">
+              <label class="form-label">
+                <i class="bi bi-geo-alt"></i>PickUp Date</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="pickupDate"
+                name="pickupDate"
+                [(ngModel)]="searchRequest.pickupDate"
+                placeholder="PickUp Date"
+                disabled
+              />
+            </div>
+
+            <div class="car-info">
+              <label for="pickupTicker" class="form-label mt-3"
+                >PickUp Location</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="pickupTicker"
+                name="pickupTicker"
+                [(ngModel)]="searchRequest.pickupLocation.city"
+                placeholder="pPickUp Location"
+                autocomplete="off"
+                disabled
+              />
+            </div>
+            <div class="car-info">
+              <label class="form-label"
+                ><i class="bi bi-geo-alt-fill"></i>Return Date</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="returnDate"
+                name="returnDate"
+                [(ngModel)]="searchRequest.returnDate"
+                placeholder="Return Date"
+                disabled
+              />
+            </div>
+            <div class="car-info">
+              <label for="returnTicker" class="form-label mt-3"
+                >Return Location</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="returnTicker"
+                name="returnTicker"
+                [(ngModel)]="searchRequest.returnLocation.city"
+                placeholder="Return Location"
+                autocomplete="off"
+                disabled
+              />
+            </div>
+          </div>
+          <div class="reserved-car-data" *ngIf="carDetails">
+            <h1>Selected Car</h1>
+            <h3>Car: {{ carDetails.modelName }} {{ carDetails.makeName }}</h3>
+            <p>Description: {{ carDetails.description }}</p>
+            <p>Year: {{ carDetails.year }}</p>
+            <p>Type: {{ carDetails.type }}</p>
+            <p>Price: {{ carDetails.price }}</p>
+            <h1>Price for {{ rentalDays }} rental: {{ finalPrice }}RON</h1>
+          </div>
+        </div>
+
+        <div class="reservations-steps">
+          <!-- <div class="col-md-6" *ngIf="currentStep === 1">
+            <app-car-details></app-car-details>
+          </div> -->
+          <div class="add-reservation" *ngIf="currentStep === 1">
+            <app-add-reservation></app-add-reservation>
+          </div>
+          <div class="payment" *ngIf="currentStep === 2">
+            <app-payment></app-payment>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <!-- <div *ngIf="currentStep === 1">
+      <button class="btn btn-outline-primary w-100" (click)="currentStep = 2">
+        Reservation Data
+      </button>
+    </div> -->
+    <div *ngIf="currentStep === 1">
+      <button class="btn btn-outline-primary" (click)="currentStep = 2">
+        Go to Payment<br />
+        <span>with full insurance</span>
+      </button>
+    </div>
+    <div *ngIf="currentStep === 2">
+      <button class="btn btn-outline-primary" (click)="makeReservation()">
+        Book and pay
+      </button>
+    </div>
+  </div>
+</div>

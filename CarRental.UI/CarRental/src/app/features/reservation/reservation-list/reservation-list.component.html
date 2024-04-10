@@ -1,0 +1,61 @@
+<div class="container">
+  <h1 class="mt-3">Reservations List</h1>
+
+  <div class="d-flex justify-content-end mt-3">
+    <a [routerLink]="['/admin/reservations/add']" class="btn btn-outline-dark"
+      >Add Reservation</a
+    >
+  </div>
+
+  <div class="container">
+    <ng-container *ngIf="reservations$ | async as reservations">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Car Model</th>
+              <th>User Name</th>
+              <th>User Email</th>
+              <th>Date Reservation</th>
+              <th>PickUp Date</th>
+              <th>Return Date</th>
+              <th>PickUp Location</th>
+              <th>Return Location</th>
+              <th>Details</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reservation of reservations">
+              <td>{{ reservation.id }}</td>
+              <td>{{ reservation.selectedCarModel }}</td>
+              <td>{{ reservation.selectedUserName }}</td>
+              <td>{{ reservation.selectedUserEmail }}</td>
+              <td>{{ reservation.dateReservation }}</td>
+              <td>{{ reservation.pickUpDate }}</td>
+              <td>{{ reservation.returnDate }}</td>
+              <td>{{ reservation.pickUpLocationName }}</td>
+              <td>{{ reservation.returnLocationName }}</td>
+              <td>{{ reservation.details.substring(0, 20) }}</td>
+              <td class="btns">
+                <a
+                  class="btn btn-outline-success"
+                  [routerLink]="['/admin/reservation', reservation.id]"
+                  >View</a
+                >
+                <button
+                  type="button"
+                  class="btn btn-outline-danger ms-3"
+                  (click)="onDelete(reservation.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+  </div>
+</div>

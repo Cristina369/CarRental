@@ -1,0 +1,91 @@
+<div class="main-container">
+  <ng-template #editSection>
+    <div class="div-show-edit" *ngIf="showEditComponent">
+      <app-search-edit
+        [searchRequest]="searchRequest"
+        (onCancel)="cancelEdit()"
+        (onEdit)="onEdit($event)"
+        (updateSearchResults)="updateSearchResults()"
+      ></app-search-edit>
+    </div>
+  </ng-template>
+
+  <div class="search-results">
+    <div class="div-edit" *ngIf="!showEditComponent; else editSection">
+      <div class="request-details">
+        <div>
+          <h1>
+            Pickup Location:
+            {{ searchRequest.pickupLocation.city }}
+          </h1>
+          <p><span>Date: </span>{{ searchRequest.pickupDate }}</p>
+        </div>
+        <i class="bi bi-arrow-right arrow"></i>
+        <div>
+          <h1>
+            Return Location:
+            {{ searchRequest.returnLocation.city }}
+          </h1>
+          <p><span>Return Date: </span>{{ searchRequest.returnDate }}</p>
+        </div>
+      </div>
+      <button class="btn-edit btn-secondary" (click)="editSearchRequest()">
+        Edit
+      </button>
+    </div>
+
+    <div class="show-filters-btn" (click)="toggleFilterModal()">
+      <h1>Filters</h1>
+      <i class="bi bi-filter"></i>
+    </div>
+
+    <div class="div-container">
+      <div *ngIf="searchResults && searchResults.length > 0">
+        <div class="row">
+          <div class="col-md-4 results" *ngFor="let car of searchResults">
+            <div class="card mb-4">
+              <img
+                [src]="car.imageCar"
+                class="card-img-top"
+                alt="{{ car.modelName }} {{ car.makeName }}"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ car.makeName }} {{ car.modelName }}
+                </h5>
+                <p class="card-text">Location:{{ car.locationName }}</p>
+                <p class="card-text">Year: {{ car.year }}</p>
+                <h5 class="card-price">{{ car.price }} Ron</h5>
+                <!-- <button class="btn btn-primary" (click)="rentCar(car)">
+                Rent Now
+              </button> -->
+                <a class="btn btn-car" (click)="rentCar(car)"> View Deal </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!searchResults || searchResults.length === 0">
+        <p>No cars found</p>
+      </div>
+
+      <div
+        class="filters-overlay"
+        *ngIf="filterModalOpen"
+        (click)="toggleFilterModal()"
+      ></div>
+      <div class="filters-modal" *ngIf="filterModalOpen">
+        <div class="modal-content">
+          <div class="close-btn" (click)="toggleFilterModal()">
+            <i class="bi bi-x"></i>
+          </div>
+          <app-filters (applyFilters)="applyFilters($event)"></app-filters>
+        </div>
+      </div>
+
+      <div class="div-filters">
+        <app-filters (applyFilters)="applyFilters($event)"></app-filters>
+      </div>
+    </div>
+  </div>
+</div>

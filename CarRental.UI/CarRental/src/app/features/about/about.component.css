@@ -1,0 +1,106 @@
+.line {
+  margin-top: 20px;
+  border-top: 1px solid #324b4b;
+}
+
+.second-line {
+  margin-bottom: 20px;
+  border-top: 1px solid #324b4b;
+}
+
+.title {
+  padding: 45px 0px 45px 110px;
+}
+
+.title h1 {
+  color: #324b4b;
+  font-size: 70px;
+  font-weight: 200;
+  padding-bottom: 30px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.about-text,
+.our-mission {
+  width: 70%;
+  text-align: start;
+  background-color: white;
+  padding: 20px 100px;
+  margin-bottom: 20px;
+}
+
+.text h3 {
+  color: #324b4b;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.text p {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgb(62, 61, 61);
+}
+
+.digits {
+  padding: 80px 20px 110px 20px;
+}
+
+.info-box {
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.info-box h2 {
+  font-family: "Rubik Scribble", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 7vw;
+  margin-bottom: 50px;
+  color: #324b4b;
+}
+
+.info-box p {
+  font-size: 25px;
+  color: #324b4b;
+}
+
+@media only screen and (max-width: 990px) and (min-width: 300px) {
+  .title {
+    padding: 2vw 0vw 3vw 5vw;
+  }
+
+  .title h1 {
+    font-size: 7vw;
+    padding-bottom: 0px;
+  }
+
+  .line {
+    margin: 0px;
+  }
+
+  .about-text,
+  .our-mission {
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 0px;
+  }
+  .info-box {
+    margin-bottom: 30px;
+  }
+
+  .info-box h2 {
+    margin-bottom: 9px;
+  }
+
+  .digits {
+    padding: 10px 20px 10px 20px;
+  }
+}
