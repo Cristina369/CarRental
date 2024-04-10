@@ -1,0 +1,46 @@
+﻿@* @using CarRental.API.Models.DTO;
+@model AddReservationRequest
+@{
+
+}
+
+<div>
+	<h1>Add Cars</h1>
+</div>
+
+<div class="container py-5">
+	<form method="post">
+		<div class="mb-3">
+			<label for="pickupDate" class="form-label">Pick-up Date</label>
+			<input type="date" class="form-control" id="pickupDate" name="pickupDate" asp-for="PickUpDate" data-val-required="The Date filed is required." asp-format="{0:yyyy-MM-ddTHH:mm}>
+		</div>
+		<div class="mb-3">
+			<label for="returnDate" class="form-label">Return Date</label>
+			<input type="date" class="form-control" id="returnDate" name="returnDate" asp-for="ReturnDate">
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Locations</label>
+			<select class="form-select" asp-items="@Model.Locations" asp-for="PickUpLocation"></select>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Locations</label>
+			<select class="form-select" asp-items="@Model.Locations" asp-for="ReturnLocation"></select>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Details</label>
+			<input type="text" class="form-control" id="details" asp-for="Details" />
+		</div>
+		<div class="mb-3">
+			<button type="submit" class="btn btn-dark">
+				Save
+			</button>
+		</div>
+		<div>
+			<ej:DateTimePicker ID="DateTime" TimePopupWidth="150" TimeDisplayFormat="hh:mm:ss tt" Width="280px" DateTimeFormat="dddd, MMMM dd, yyyy hh:mm:ss tt" runat="server"></ej:DateTimePicker>
+		</div>
+	</form>
+</div>
+
+ *@

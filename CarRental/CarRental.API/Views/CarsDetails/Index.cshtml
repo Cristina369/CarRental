@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+@inject UserManager<IdentityUser> userManager
+ 
+@model CarRental.API.Models.ViewModels.CarReservationViewModel
+
+@{
+	ViewData["Title"] = Model.Model.Name + " Rental";
+}
+
+<div class="container my-5">
+	<div class="row justify-content-center">
+		<div class="col-12 col-lg-6">
+			@if (Model != null )
+			{
+				<h1 class="mb-3">
+					@Model.Model.Name
+				</h1>
+				<div class="d-flex justify-content-between mb-3">
+					<span class="text-secondary">Price: @Model.Price</span>
+					<span class="text-secondary">Type: @Model.Type</span>
+					<span>Reservations: @Model.TotalReservations</span>
+				</div>
+
+				<img src="@Model.ImageCar" class="d-block img-fluid mb-3" />
+
+				<div class="mb-3">
+					<a class="btn btn-dark" asp-area="" asp-controller="CarReservation" asp-action="Add" asp-route-id="@Model.Id">Book</a>
+				</div>
+			}
+			else
+			{
+				<p>Blog post not found!</p>
+			}
+		</div>
+	</div>
+</div>

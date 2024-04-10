@@ -1,0 +1,54 @@
+﻿@model List<CarRental.API.Models.Domain.Location>
+@{
+
+}
+
+<div>
+	<h1>All Locations</h1>
+</div>
+
+<div class="container py-5">
+	@if (Model != null && Model.Any())
+	{
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>City</th>
+					<th>Street</th>
+					<th>Phone</th>
+					<th> </th>
+					<th> </th>
+
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var carLocation in Model)
+				{
+					<tr>
+						<td>@carLocation.Name</td>
+						<td>@carLocation.City</td>
+						<td>@carLocation.Street</td>
+						<td>@carLocation.Phone</td>
+						<td>
+							<a class="btn btn-dark ms-2" asp-area="" asp-controller="Location" asp-action="Edit" asp-route-id="@carLocation.Id">Edit</a>
+						</td>
+						@using (Html.BeginForm("Delete", "LocationController", FormMethod.Post))
+						{
+							@Html.AntiForgeryToken()
+							@Html.HiddenFor(model => carLocation.Id)
+							<td>
+								<button type="submit" class="btn btn-danger ms-2" asp-area="" asp-controller="Location" asp-action="Delete" asp-route-id="@carLocation.Id" value="Delete">Delete</button>
+							</td>
+
+						}
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<p>No make found</p>
+	}
+</div>

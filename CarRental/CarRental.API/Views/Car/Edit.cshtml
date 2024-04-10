@@ -1,0 +1,116 @@
+﻿@using CarRental.API.Models.DTO;
+@model EditCarRequest
+@{
+
+}
+
+<div>
+	<h1>Edit Cars</h1>
+</div>
+
+<div class="container py-5">
+	@if(Model != null)
+	{
+		<form method="post">
+			<div class="mb-3">
+@* 				<input type="hidden" class="form-control" id="id" asp-for="Id" readonly />
+ *@			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Models</label>
+				<select class="form-select" asp-items="@Model.Models" asp-for="SelectedModel"></select>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Location</label>
+				<select class="form-select" asp-items="@Model.Locations" asp-for="SelectedLocation"></select>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Price</label>
+				<input type="text" class="form-control" id="price" asp-for="Price" />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Year</label>
+				<input type="text" class="form-control" id="year" asp-for="Year" />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Type</label>
+				<input type="text" class="form-control" id="type" asp-for="Type" />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Description</label>
+				<textarea type="text" class="form-control" id="description" asp-for="Description"></textarea>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Featured Image Upload</label>
+				<input type="file" id="featuredImageUpload" class="form-control" />
+				@if(Model.ImageCar != null)
+				{
+					<img src="@Model.ImageCar" id="featuredImageDisplay" style="display: block; width: 300px;" />
+				}
+				else
+				{
+					<img src="" id="featuredImageDisplay" style="display: none; width: 300px;" />
+				}
+			</div>
+			<div class="mb-3">
+				<label class="form-label">ImageCar</label>
+				<input type="text" class="form-control" id="imageCar" asp-for="ImageCar"></input>
+			</div>
+
+			<div class="mb-3 form-check">
+				<input type="checkbox" class="form-check-input" id="available" asp-for="Available" />
+				<label class="form-check-label">Is Available ? </label>
+			</div>
+
+			<div class="mb-3">
+				<button type="submit" class="btn btn-dark">
+					Update
+				</button>
+				<button type="submit" class="btn btn-danger ms-2" asp-area="" asp-controller="Car" asp-action="Delete">Delete
+
+				</button>
+			</div>
+		</form>
+	}
+	else
+	{
+		<p>No car found</p>
+	}
+
+</div>
+
+@section Scripts {
+	<script>
+		const featuredUploadElement = document.getElementById('featuredImageUpload');
+		const featuredImageUrlElement = document.getElementById('imageCar');
+		const featuredImageDisplayElement = document.getElementById('featuredImageDisplay');
+
+
+		async function uploadFeaturedImage(e) {
+			console.log(e.target.files[0]);
+
+			let data = new FormData();
+			data.append('file', e.target.files[0]);
+
+			await fetch('/api/images', {
+				method: 'POST',
+				headers: {
+					'Aceept': '*/*',
+				},
+				body: data
+			}).then(response => response.json())
+				.then(result => {
+					featuredImageUrlElement.value = result.link;
+					featuredImageDisplayElement.src = result.link;
+					featuredImageDisplayElement.style.display = 'block';
+				});
+		}
+
+
+		featuredUploadElement.addEventListener('change', uploadFeaturedImage);
+
+	</script>
+}

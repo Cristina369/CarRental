@@ -1,0 +1,62 @@
+﻿@model List<CarRental.API.Models.Domain.Car>
+@{
+
+}
+
+<div>
+	<h1>All Cars</h1>
+</div>
+
+<div class="container py-5">
+@if (Model != null && Model.Any())
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Model</th>
+				<th>Year</th>
+				<th>Price</th>
+				<th>Type</th>
+				<th>Description</th>
+				<th>Location</th>
+				<th>Available</th>
+				<th>Image Car</th>
+				<th> </th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var carModel in Model)
+			{
+				<tr>
+					<td>@carModel.Model.Name</td>
+					<td>@carModel.Year</td>
+					<td>@carModel.Price</td>
+					<td>@carModel.Type</td>
+					<td>@carModel.Description</td>
+					<td>@carModel.Location.Name</td>
+					<td>@carModel.Available</td>
+						<td>
+							@if(carModel.ImageCar != null)
+							{
+								<img src="@carModel.ImageCar" style="display: block; width: 80px;" />
+							}
+							else
+							{
+								<img src="@carModel.ImageCar" style="display: none; width: 150px;" />
+								<p>No image!</p>
+							}
+						</td>
+					<td>
+						<a asp-area="" asp-controller="Car" asp-action="Edit" asp-route-id="@carModel.Id">Edit</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+else
+{
+	<p>No cars found</p>
+}
+</div>

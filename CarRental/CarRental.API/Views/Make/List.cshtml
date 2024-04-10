@@ -1,0 +1,44 @@
+﻿@model List<CarRental.API.Models.Domain.Make>
+@{
+
+}
+
+<div>
+	<h1>All Makes</h1>
+</div>
+
+<div class="container py-5">
+	@if (Model != null && Model.Any())
+	{
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th> </th>
+
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var carMake in Model)
+				{
+					<tr>
+						<td>@carMake.Name</td>
+						@using (Html.BeginForm("Delete", "MakeController", FormMethod.Post))
+						{
+							@Html.AntiForgeryToken()
+							@Html.HiddenFor(model => carMake.Id)
+							<td>
+								<button type="submit" class="btn btn-danger ms-2" asp-area="" asp-controller="Make" asp-action="Delete" asp-route-id="@carMake.Id" value="Delete">Delete</button>
+							</td>
+
+						}
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<p>No make found</p>
+	}
+</div>
