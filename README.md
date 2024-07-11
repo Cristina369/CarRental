@@ -65,8 +65,8 @@ Run Entity Framework Core migrations to apply database changes:
 
 #### Login Credentials
 Use the following credentials for testing:
-- Admin: Username: admin@example.com | Password: admin123
-- User: Username: user@example.com | Password: user123
+- Admin: Username: superadmin@blog.com | Password: Superadmin@123
+- User: Username: User1@gmail.com | Password: User123&.
 
 #### Notes
 Ensure both frontend and backend servers are running simultaneously for full application functionality.
