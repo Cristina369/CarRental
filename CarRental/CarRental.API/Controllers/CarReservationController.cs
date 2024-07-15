@@ -1,12 +1,8 @@
 ﻿using CarRental.API.Models.Domain;
 using CarRental.API.Models.DTO;
-using CarRental.API.Models.ViewModels;
-using CarRental.API.Repositories.Implementation;
 using CarRental.API.Repositories.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 
 namespace CarRental.API.Controllers
 {

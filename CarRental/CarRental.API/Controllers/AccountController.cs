@@ -20,12 +20,6 @@ namespace CarRental.API.Controllers
             this.tokenRepository = tokenRepository;
         }
 
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
-
         [HttpPost]
 		public async Task<IActionResult> Register([FromBody] RegisterViewModel registerViewModel)
 		{
@@ -71,14 +65,6 @@ namespace CarRental.API.Controllers
             return ValidationProblem(ModelState);
 		}
 
-        [HttpGet]
-        public IActionResult Login(string ReturnUrl)
-        {
-   
-
-            return View();
-        }
-
 
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] LoginViewModel loginViewModel)
@@ -117,12 +103,5 @@ namespace CarRental.API.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
-        [HttpGet]
-        public IActionResult AccessDenied()
-        {
-            return View();
-        }
-
     }
 }

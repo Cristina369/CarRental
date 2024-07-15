@@ -1,13 +1,7 @@
-﻿using CarRental.API.Models;
-using CarRental.API.Models.Domain;
-using CarRental.API.Models.DTO;
-using CarRental.API.Models.ViewModels;
-using CarRental.API.Repositories.Implementation;
+﻿using CarRental.API.Models.DTO;
 using CarRental.API.Repositories.Interface;
-using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualBasic;
-using System.Diagnostics;
+
 
 namespace CarRental.API.Controllers
 {
@@ -29,79 +23,6 @@ namespace CarRental.API.Controllers
             this.modelRepository = modelRepository;
             this.locationRepository = locationRepository;
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Index()
-        {
-            var cars = await carRepository.GetAllAsync();
-            var makes = await makeRepository.GetAllAsync();
-
-            var model = new HomeViewModel
-            {
-                // Cars = cars,
-                // Makes = makes
-            };
-
-            return View(model);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetMatchingLocations([FromQuery] string locationSearch)
-        {
-            try
-            {
-                var cars = await carRepository.GetAllAsync();
-                var matchingLocations = cars
-                    .Select(car => new Location
-                    {
-                        Id = car.Location.Id,
-                        Street = car.Location.Street,
-                        City = car.Location.City,
-                        Phone = car.Location.Phone,
-                        Name = car.Location.Name
-                    })
-                    // .Distinct()
-                    .Where(location => location.City.StartsWith(locationSearch, StringComparison.OrdinalIgnoreCase))
-                    .ToList();
-
-                //foreach (var location in matchingLocations)
-                //{
-                //    Console.WriteLine($"Location ID: {location.Id}, Street: {location.Street}, City: {location.City}, Phone: {location.Phone}, Name: {location.Name}");
-                //}
-
-                var response = new List<Location>();
-                foreach (var matchingLocation in matchingLocations)
-                {
-                    response.Add(new Location
-                    {
-                        Id = matchingLocation.Id,
-                        Street = matchingLocation.Street,
-                        City = matchingLocation.City,
-                        Phone = matchingLocation.Phone,
-                        Name = matchingLocation.Name
-                    });
-                }
-                return Json(response);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-    
-
-
 
         [HttpGet]
         public async Task<IActionResult> Search([FromQuery] string PickupDate, string ReturnDate, Guid PickupLocation, Guid ReturnLocation)
@@ -145,7 +66,6 @@ namespace CarRental.API.Controllers
             }
             return Ok(response);
 
-            //return Ok(availableCars);
         }
 
     }

@@ -1,7 +1,4 @@
-﻿using CarRental.API.Models.Domain;
-using CarRental.API.Models.DTO;
-
-namespace CarRental.API.Models.ViewModels
+﻿namespace CarRental.API.Models.ViewModels
 {
 	public class HomeViewModel
 	{

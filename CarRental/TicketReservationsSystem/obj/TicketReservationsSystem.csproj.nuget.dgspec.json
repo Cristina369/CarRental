@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\CarRental.API\\CarRental.API.csproj": {}
+    "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\TicketReservationsSystem\\TicketReservationsSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\CarRental.API\\CarRental.API.csproj": {
+    "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\TicketReservationsSystem\\TicketReservationsSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\CarRental.API\\CarRental.API.csproj",
-        "projectName": "CarRental.API",
-        "projectPath": "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\CarRental.API\\CarRental.API.csproj",
+        "projectUniqueName": "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\TicketReservationsSystem\\TicketReservationsSystem.csproj",
+        "projectName": "TicketReservationsSystem",
+        "projectPath": "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\TicketReservationsSystem\\TicketReservationsSystem.csproj",
         "packagesPath": "C:\\Users\\cristina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\CarRental.API\\obj\\",
+        "outputPath": "C:\\Users\\cristina\\DotNet_Apps\\CarRental_FinalVersion\\CarRental\\TicketReservationsSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,25 +44,13 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "CloudinaryDotNet": {
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[1.23.0, )"
+              "version": "[7.0.11, )"
             },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[7.0.9, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.13, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[6.31.0, )"
-            },
-            "bootstrap": {
-              "target": "Package",
-              "version": "[5.3.2, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

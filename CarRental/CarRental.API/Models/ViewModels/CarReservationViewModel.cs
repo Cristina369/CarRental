@@ -11,7 +11,6 @@ namespace CarRental.API.Models.ViewModels
 		public string Description { get; set; }
 		public string ImageCar { get; set; }
 		public bool Available { get; set; }
-		// public Guid LocationId { get; set;}
 		public Guid ModelId { get; set; }
 		public Model Model { get; set; }
 		public Guid LocationId { get; set; }
