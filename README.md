@@ -25,7 +25,7 @@ The administrative interface is designed to be easy to use, making it easy to ma
 - State Management: RxJS
 - Routing: Angular Router
 
-## Design
+## Demo
 coming soon...
 </br>
 
@@ -34,7 +34,7 @@ coming soon...
 - Booking Management: Users can book cars for their preferred time slots and manage their reservations.
 - Admin Dashboard: Administrators have access to a powerful dashboard to manage all aspects of the car rental business, including cars, models, brands, locations, and reservations.
 - Secure Authentication and Authorization: The application uses ASP.NET Identity and JWT for secure user authentication and role-based authorization.
-- Responsive Design: The front-end application is built with Angular Material, ensuring a responsive and mobile-friendly user interface.
+- Responsive Design: The front-end application is built with Angular and Bootstrap, ensuring a responsive and mobile-friendly user interface.
 </br>
 
 ## Getting Started
@@ -43,7 +43,7 @@ Before running the application, ensure you have the following installed:
 - Node.js: To run the frontend Angular application.
 - Angular CLI: To build and serve the Angular application.
 - .NET Core SDK: To run the backend ASP.NET Core application.
-- SQL Server: To host the database (if not using SQLite for development).
+- SQL Server: To host the database.
 
 #### Clone the Repository
 ```git clone https://github.com/your-username/car-rental-app.git```
