@@ -3,7 +3,8 @@ The car rental app involves creating a simple and easy-to-use platform for users
 It also serves as a comprehensive management system for administrators to oversee bookings, cars, models, brands, and locations. 
 The app ensures a secure experience through robust authentication and authorization features that cater to both end-users and administrators.
 
-![Home page](https://github.com/Cristina369/CarRental/tree/main/CarRental.UI/CarRental/src/app/shared/Car-Rental.png?raw=true "Car Rental Application")
+![Home page](https://github.com/Cristina369/CarRental/blob/main/CarRental.UI/CarRental/src/app/shared/Car-Rental.png?raw=true "Car Rental Application")
+
 
 Administrators also have a management system that allows them to oversee all aspects of the car rental business, including managing reservations, cars, models, brands and locations.
 The administrative interface is designed to be easy to use, making it easy to maintain and update your rental car inventory and reservations.
